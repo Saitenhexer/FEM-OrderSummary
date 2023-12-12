@@ -11,55 +11,54 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap"
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="style.css" />
-
-    <title>Frontend Mentor | Single Price Grid Component</title>
+    <title>Frontend Mentor | Order summary card</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   </head>
   <body>
     <main class="card">
-      <section class="card__join">
-        <h1 class="card__title title--cyan">Join our community</h1>
-        <h3 class="card__subtitle subtitle--accent">
-          30-day, hassle-free money back guarantee
-        </h3>
-        <p class="card__infotxt">
-          Gain access to our full library of tutorials along with expert code
-          reviews. Perfect for any developers who are serious about honing their
-          skills.
+      <img
+        class="card__img"
+        src="images/illustration-hero.svg"
+        alt="Girl who listens to music"
+      />
+      <div class="card__text">
+        <h1 class="card__title">Order Summary</h1>
+        <p class="card__description">
+          You can now listen to millions of songs, audiobooks, and podcasts on
+          any device anywhere you like!
         </p>
-      </section>
-      <section class="card__sign">
-        <h1 class="card__subtitle">Monthly Subscription</h1>
-        <div class="card__price">
-          <p class="price__amount">&dollar;29</p>
-          <p class="price__period">per month</p>
+        <div class="card__plan">
+          <svg
+            class="plan__icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="48"
+            height="48"
+          >
+            <g fill="none" fill-rule="evenodd">
+              <circle cx="24" cy="24" r="24" fill="#DFE6FB" />
+              <path
+                fill="#717FA6"
+                fill-rule="nonzero"
+                d="M32.574 15.198a.81.81 0 00-.646-.19L20.581 16.63a.81.81 0 00-.696.803V26.934a3.232 3.232 0 00-1.632-.44A3.257 3.257 0 0015 29.747 3.257 3.257 0 0018.253 33a3.257 3.257 0 003.253-3.253v-8.37l9.726-1.39v5.327a3.232 3.232 0 00-1.631-.441 3.257 3.257 0 00-3.254 3.253 3.257 3.257 0 003.254 3.253 3.257 3.257 0 003.253-3.253V15.81a.81.81 0 00-.28-.613z"
+              />
+            </g>
+          </svg>
+          <p class="plan__type">Annual Plan</p>
+          <p class="plan__price">$59.99/year</p>
+          <p class="plan__change" href="#">Change</p>
         </div>
-        <p class="price__calculation">
-          Full access for less than &dollar;1 a day
-        </p>
-        <button type="submit">Sign Up</button>
-      </section>
-      <section class="card__why">
-        <h1 class="card__subtitle">Why Us</h1>
-        <ul class="card__list">
-          <li>Tutorials by industry experts</li>
-          <li>Peer &amp; expert code review</li>
-          <li>Coding exercises</li>
-          <li>Access to our GitHub repos</li>
-          <li>Community forum</li>
-          <li>Flashcard decks</li>
-          <li>New videos every week</li>
-        </ul>
-      </section>
+        <button class="card__button">Proceed to Payment</button>
+        <p class="card__cancel">Cancel Order</p>
+      </div>
     </main>
   </body>
 </html>

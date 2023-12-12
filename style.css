@@ -1,155 +1,179 @@
-/*
-#####################################
-    ---VARIABLES---
-#####################################
-*/
-
 * {
   box-sizing: border-box;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 :root {
-  --clr-bg: hsl(205, 44%, 93%);
-  --clr-accent: hsl(71, 73%, 54%);
-  --clr--cyan: hsl(179, 62%, 43%);
-  --clr--cyanwht: hsl(179, 62%, 48%);
-  --clr-lgray: hsl(204, 43%, 93%);
-  --clr-grblue: hsl(218, 22%, 67%);
+  --clr-pblue: hsl(225, 100%, 94%);
+  --clr-bblue: hsl(245, 75%, 52%);
+  --clr-vpblue: hsl(225, 100%, 98%);
+  --clr-desblue: hsl(224, 23%, 55%);
+  --clr-dblue: hsl(223, 47%, 23%);
   --clr-white: hsl(0, 0%, 100%);
+  --clr-activestate: hsl(245, 83%, 68%);
 
-  --fnt-primary: "Karla";
-  --fnt-wght-400: 400;
+  --fnt-pri: "Red Hat Display";
+  --fnt-wght-900: 900;
+  --fnt-wght-500: 500;
   --fnt-wght-700: 700;
 }
 
 body {
-  font-size: 16px;
-  min-height: 100dvh;
-  font-family: var(--fnt-primary);
-  background-color: var(--clr-bg);
+  font-family: var(--fnt-pri);
+  background-color: var(--clr-pblue);
+  background-image: url(images/pattern-background-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
   display: flex;
+  height: 100dvh;
   justify-content: center;
   align-items: center;
 }
 
 .card {
-  display: flex;
-  max-width: 40rem;
-  flex-flow: column;
-  box-shadow: 0px 15px 30px 0px rgba(0, 81, 171, 0.15);
-}
-.card__join {
+  border-radius: 1.25rem;
+  max-width: 28rem;
+  min-width: 23.5rem;
+  margin: 1.5rem;
+  box-shadow: 0px 40px 40px -20px rgba(13, 48, 189, 0.15);
   background-color: var(--clr-white);
-  padding: 2.5rem;
-  border-radius: 0.5rem 0.5rem 0 0;
 }
 
-.card__sign {
-  background-color: var(--clr--cyan);
-  padding: 2.5rem;
+.card__img {
+  display: block;
+  overflow: hidden;
+  border-radius: 1.25rem 1.25rem 0 0;
+  width: 100%;
 }
 
-.card__why {
-  padding: 2.5rem;
-  background-color: var(--clr--cyanwht);
-  border-radius: 0 0 0.5rem 0.5rem;
+.card__text {
+  padding: 0 3rem;
+  padding: 0 clamp(1.5rem, 0.9699248120300752rem + 2.2556390977443606vw, 3rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .card__title {
-  font-size: 1.5rem;
-  padding-bottom: 1.5rem;
-  color: var(--clr--cyan);
-  font-weight: var(--fnt-wght-700);
+  font-size: 1.375rem;
+  font-size: clamp(
+    1.375rem,
+    1.2424812030075187rem + 0.5639097744360901vw,
+    1.75rem
+  );
+  margin-top: 2.8rem;
+  margin-bottom: 1rem;
+  font-weight: var(--fnt-wght-900);
+  color: var(--clr-dblue);
 }
 
-.card__subtitle {
-  font-size: 1.125rem;
-  color: var(--clr-white);
-  font-weight: var(--fnt-wght-700);
-  padding-bottom: 1.125rem;
-}
-
-.subtitle--accent {
-  color: var(--clr-accent);
-}
-
-.card__infotxt {
-  color: var(--clr-grblue);
-  line-height: 1.625rem; /* 162.5% */
-  letter-spacing: -0.0125rem;
-}
-
-.card__price {
-  display: flex;
-  align-items: center;
-  gap: 0.6875rem;
-}
-
-.price__amount {
-  font-size: 2rem;
-  font-weight: var(--fnt-wght-700);
-  color: var(--clr-white);
-  letter-spacing: -0.025rem;
-}
-
-.price__period {
+.card__description {
   line-height: 1.625rem;
-  letter-spacing: -0.0125rem;
-  color: var(--clr-white);
-  font-weight: var(--fnt-wght-400);
-  opacity: 0.5;
+  font-size: 0.9375rem;
+  font-size: clamp(
+    0.9375rem,
+    0.9154135338345865rem + 0.09398496240601503vw,
+    1rem
+  );
+  color: var(--clr-desblue);
+  text-align: center;
+  margin-bottom: 1.125rem;
 }
 
-.price__calculation {
-  color: var(--clr-white);
-  line-height: 1.625rem;
-  letter-spacing: -0.0125rem;
-}
-
-button {
-  font-family: inherit;
-  background-color: var(--clr-accent);
+.card__plan {
+  display: grid;
+  grid-template-columns: 2.5fr 5fr 1fr;
+  background-color: var(--clr-vpblue);
   padding: 1rem;
-  cursor: pointer;
-  font-weight: var(--fnt-wght-700);
-  color: var(--clr-white);
-  border: 0;
-  border-radius: 0.3125rem;
-  background: #c0df33;
-  width: 100%;
-  margin-top: 1.5rem;
-  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.1);
+  padding: clamp(1rem, 0.8233082706766918rem + 0.7518796992481203vw, 1.5rem);
+  border-radius: 0.6875rem;
+  margin-bottom: 2rem;
 }
 
-button:hover {
-  background-color: var(--clr-grblue);
+.plan__icon {
+  grid-row: 1 / 3;
 }
 
-.card__list {
-  list-style: none;
-  color: var(--clr-lgray);
+.plan__type {
+  font-weight: var(--fnt-wght-900);
+  color: var(--clr-dblue);
   font-size: 0.875rem;
-  line-height: 1.25rem;
+  font-size: clamp(
+    0.875rem,
+    0.8308270676691729rem + 0.18796992481203006vw,
+    1rem
+  );
 }
 
-@media (min-width: 40rem) {
-  .card {
-    flex-flow: row wrap;
-  }
+.plan__price {
+  color: var(--clr-desblue);
+  grid-column: 2 / 2;
+  font-size: 0.875rem;
+  font-size: clamp(
+    0.875rem,
+    0.8308270676691729rem + 0.18796992481203006vw,
+    1rem
+  );
+}
 
-  .card__join {
-    flex-basis: 100%;
-  }
+.plan__change {
+  text-decoration: underline;
+  font-size: 0.8125rem;
+  font-size: clamp(
+    0.8125rem,
+    0.7904135338345865rem + 0.09398496240601503vw,
+    0.875rem
+  );
+  font-weight: var(--fnt-wght-900);
+  color: var(--clr-bblue);
+  grid-column-start: 3;
+  grid-row: 1 / 3;
+  cursor: pointer;
+  align-self: center;
+}
 
-  .card__sign {
-    flex-basis: 50%;
-    border-radius: 0 0 0 0.5rem;
-  }
+.plan__change:hover {
+  text-decoration: none;
+  color: var(--clr-activestate);
+}
 
-  .card__why {
-    flex-basis: 50%;
-    border-radius: 0 0 0.5rem 0;
+.card__button {
+  font-family: inherit;
+  color: var(--clr-white);
+  padding: 1rem;
+  border-radius: 0.6875rem;
+  box-shadow: 0px 20px 20px 0px rgba(56, 42, 225, 0.19);
+  border: 0;
+  font-size: 0.9375rem;
+  margin-bottom: 2rem;
+  font-weight: var(--fnt-wght-900);
+  background-color: var(--clr-bblue);
+  width: 100%;
+}
+
+.card__button:hover {
+  cursor: pointer;
+  background-color: var(--clr-activestate);
+}
+
+.card__cancel {
+  color: var(--clr-desblue);
+  font-weight: var(--fnt-wght-900);
+  font-size: 0.9375rem;
+  margin-bottom: 3rem;
+}
+
+.card__cancel:hover {
+  cursor: pointer;
+  color: var(--clr-dblue);
+}
+
+@media (max-width: 30rem) {
+  body {
+    background-image: url(images/pattern-background-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 }
